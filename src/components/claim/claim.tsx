@@ -10,7 +10,7 @@ import axios from 'axios'
 import peanutman_logo from '@/assets/peanutman-logo.svg'
 import ReactGA from 'react-ga4'
 import * as hooks from '@/hooks'
-
+import wellknown from '@/consts/well-known.json'
 export function Claim({ link }: { link: string }) {
     const [linkState, setLinkState] = useState<_consts.linkState>('LOADING')
     const [claimScreen, setClaimScreen] = useState<_consts.IClaimScreenState>(_consts.INIT_VIEW)
@@ -90,6 +90,14 @@ export function Claim({ link }: { link: string }) {
 
         const [, fragment] = localLink.split('#')
         const urlSearchParams = new URLSearchParams(fragment)
+
+        if (urlSearchParams.get('t') === 'rainbow') {
+            console.log('redirecting to rainbow...')
+            const deeplinkUrl = wellknown.rainbow.deeplink
+            const fullUrl = deeplinkUrl + '#' + fragment
+            window.location.href = fullUrl
+        }
+
         const linkChainId = urlSearchParams.get('c')
         const _link = localLink.toString()
         setClaimLink(_link)

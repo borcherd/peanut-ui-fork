@@ -1,0 +1,7 @@
+{
+    "rainbow": {
+        "name": "Rainbow",
+        "deeplink": "peanut-app://",
+        "fallback": "https://www.peanut-app.io/"
+    }
+}
