@@ -26,7 +26,7 @@ export default function landing() {
             <section className="lg:divide-y" id="hero">
                 <div className="relative mx-auto">
                     <div className="lg:grid lg:grid-flow-col-dense lg:grid-cols-2">
-                        <div className="brutalborder bg-yellow pb-16 pt-16 text-center sm:px-6 lg:mx-0 lg:max-w-none lg:px-0">
+                        <div className="brutalborder bg-yellow py-6 text-center sm:px-6 lg:mx-0 lg:max-w-none">
                             <h1 className="mx-auto my-8 w-3/4 text-5xl font-black">Send crypto with a link</h1>
                             <p className="m-4 mx-auto w-2/3 p-2 text-2xl">
                                 Forget about wallet addresses and confirming transactions. Simply send a link.
@@ -34,13 +34,13 @@ export default function landing() {
                             <Link
                                 id="cta-btn"
                                 type="submit"
-                                className="mx-auto mb-2 mt-8 block bg-white p-5 text-2xl font-black no-underline md:w-3/5 lg:w-1/3  "
+                                className="mx-auto mb-2 mt-8 block w-3/5 bg-white p-5 text-2xl font-black no-underline lg:w-1/3  "
                                 href={'/send'}
                             >
                                 Send crypto
                             </Link>
                         </div>
-                        <div className="center-xy brutalborder flex flex-row items-center justify-center gap-6 bg-fuchsia py-3 lg:pb-16 lg:pt-32 ">
+                        <div className="center-xy brutalborder flex flex-row items-center justify-center gap-6 bg-fuchsia py-6">
                             <img src={peanutman_cheering.src} className="w-1/3" />
                             <div>
                                 <span className="inline cursor-pointer text-6xl font-light italic">henlo! </span>
@@ -50,7 +50,7 @@ export default function landing() {
                 </div>
             </section>
 
-            <section id="logos" className="my-1 scale-50 justify-center bg-white py-4">
+            <section id="logos" className="my-1 scale-75 justify-center bg-white py-0 md:scale-50 md:py-4">
                 <div role="list" className="mx-4 flex flex-wrap items-center justify-center gap-4 gap-y-1 sm:gap-y-4">
                     <div className="border-2 border-transparent p-2 text-center hover:border-black">
                         <a href="https://scroll.io" target="_blank">
@@ -105,7 +105,11 @@ export default function landing() {
                 <div role="list" className="grid grid-cols-1 gap-0 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="brutalborder m-4 flex flex-col bg-teal p-8" id="frens">
                         <div className="flex-grow">
-                            <img className="inline h-28 w-28 px-4 hover:invert" src={smiley2.src} alt="" />
+                            <img
+                                className="inline flex h-28 w-28 w-full self-center hover:invert "
+                                src={smiley2.src}
+                                alt=""
+                            />
                             <h3 className="text-5xl font-bold">Pay frens</h3>
                             <p className="mt-1 block text-2xl leading-loose">
                                 Need to send some crypto to a fren? Don't waste time asking for their wallet address.
@@ -115,25 +119,24 @@ export default function landing() {
                         </div>
 
                         <div className="center-xy flex-end my-6 flex justify-around gap-12">
-                            <a href="/cases#frens" hidden>
-                                <button className="brutalborder brutalshadow p-4 text-lg font-bold hover:bg-red">
-                                    <img className="inline h-8 px-4" src={case_study.src} alt="" />
-                                    Case Study
-                                </button>
-                            </a>
-
-                            <a href="https://discord.gg/MwAPcbjn" target="_blank">
-                                <button className="brutalborder brutalshadow p-4 text-lg font-bold hover:bg-red">
-                                    <img className="inline h-8 px-4" src={message.src} alt="" />
-                                    Let's chat!
-                                </button>
+                            <a
+                                href="https://discord.gg/MwAPcbjn"
+                                className="brutalborder brutalshadow flex items-center justify-center gap-2 bg-white p-4 text-lg font-bold text-black no-underline hover:bg-red"
+                                target="_blank"
+                            >
+                                <img className="inline h-8 px-4" src={message.src} alt="" />
+                                Let's chat!
                             </a>
                         </div>
                     </div>
 
                     <div className="brutalborder m-4 flex flex-col bg-red p-8" id="airdrops">
                         <div className="flex-grow">
-                            <img className="inline h-28 w-28 px-4 hover:invert" src={airdrop.src} alt="" />
+                            <img
+                                className="inline flex h-28 w-28 w-full self-center hover:invert "
+                                src={airdrop.src}
+                                alt=""
+                            />
                             <h3 className="text-5xl font-bold">Airdrops & Bulk</h3>
                             <p className="mt-1 block flex-grow text-2xl leading-loose">
                                 Need to send crypto or NFTs to a large group of people? No problem. Just send generate
@@ -143,25 +146,24 @@ export default function landing() {
                         </div>
 
                         <div className="center-xy flex-end my-6 flex justify-around gap-12">
-                            <a href="/cases#airdrops" hidden>
-                                <button className="brutalborder brutalshadow p-4 text-lg font-bold hover:bg-teal">
-                                    <img className="inline h-8 px-4" src={case_study.src} alt="case study icon" />
-                                    Case Study
-                                </button>
-                            </a>
-
-                            <a href="https://discord.gg/MwAPcbjn" target="_blank">
-                                <button className="brutalborder brutalshadow p-4 text-lg font-bold hover:bg-teal">
-                                    <img className="inline h-8 px-4" src={message.src} alt="message icon" />
-                                    Let's chat!
-                                </button>
+                            <a
+                                href="https://discord.gg/MwAPcbjn"
+                                target="_blank"
+                                className="brutalborder brutalshadow flex items-center justify-center gap-2 bg-white p-4 text-lg font-bold text-black no-underline hover:bg-red"
+                            >
+                                <img className="inline h-8 px-4" src={message.src} alt="message icon" />
+                                Let's chat!
                             </a>
                         </div>
                     </div>
 
                     <div className="brutalborder m-4 flex flex-col bg-lightblue p-8" id="privacy">
                         <div className="flex-grow">
-                            <img className="inline h-28 w-28 px-4 hover:invert" src={shield.src} alt="" />
+                            <img
+                                className="inline flex h-28 w-28 w-full self-center hover:invert "
+                                src={shield.src}
+                                alt=""
+                            />
                             <h3 className="text-5xl font-bold">Privacy</h3>
                             <p className="mt-1 block text-2xl leading-loose">
                                 Make transactions and decouple your wallet address from your identity. Send funds to
@@ -171,18 +173,13 @@ export default function landing() {
                         </div>
 
                         <div className="center-xy flex-end my-6 flex justify-around gap-12">
-                            <a href="/cases#privacy" hidden>
-                                <button className="hover:bg-orange brutalborder brutalshadow p-4 text-lg font-bold">
-                                    <img className="inline h-8 px-4" src={case_study.src} alt="case study icon" />
-                                    Case study
-                                </button>
-                            </a>
-
-                            <a href="https://discord.gg/MwAPcbjn" target="_blank">
-                                <button className="brutalborder brutalshadow p-4 text-lg font-bold hover:bg-yellow">
-                                    <img className="inline h-8 px-4" src={message.src} alt="message icon" />
-                                    Let's chat!
-                                </button>
+                            <a
+                                href="https://discord.gg/MwAPcbjn"
+                                target="_blank"
+                                className="brutalborder brutalshadow flex items-center justify-center gap-2 bg-white p-4 text-lg font-bold text-black no-underline hover:bg-red"
+                            >
+                                <img className="inline h-8 px-4" src={message.src} alt="message icon" />
+                                Let's chat!
                             </a>
                         </div>
                     </div>
@@ -192,17 +189,20 @@ export default function landing() {
             <section className="lg:divide-y" id="explainer">
                 <div className="relative mx-auto border-black">
                     <div className="lg:grid lg:grid-flow-col-dense lg:grid-cols-2">
-                        <div className="center-xy brutalborder flex h-full w-full flex-row items-center justify-center gap-2 bg-fuchsia text-center text-base font-bold">
-                            <img src={peanutman_presenting.src} className="bottom-0 left-0 w-4/5" />
+                        <div className="center-xy brutalborder w-maxflex-row flex h-full items-center justify-center gap-2 bg-fuchsia py-4 pr-2 text-center text-base font-bold md:py-0">
+                            <img
+                                src={peanutman_presenting.src}
+                                className="bottom-0 left-0 max-h-[475px] w-[60%] md:w-auto "
+                            />
 
                             <div className="mb-5">
-                                <div className="mx-4 flex flex-col bg-fuchsia ">
-                                    <a href="https://docs.peanut.to/integrations/contract-addresses" target="_blank">
-                                        <button className="brutalborder brutalshadow bg-fuchsia p-2 px-4 hover:bg-yellow">
-                                            smart contracts
-                                        </button>
-                                    </a>
-                                </div>
+                                <a
+                                    href="https://docs.peanut.to/integrations/contract-addresses"
+                                    target="_blank"
+                                    className="brutalborder brutalshadow mx-4 flex flex-col bg-fuchsia bg-fuchsia p-2 px-4 text-sm text-black no-underline hover:bg-yellow md:text-xl"
+                                >
+                                    smart contracts
+                                </a>
                             </div>
                         </div>
                         <div className="center-xy brutalborder flex h-full w-full flex-row items-center justify-center gap-2 bg-yellow text-center text-base font-bold text-black">
