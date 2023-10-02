@@ -95,7 +95,7 @@ export default function landing() {
             </section>
 
             <global_components.MarqueeWrapper backgroundColor="bg-black">
-                <div className="mr-2 py-2 text-center font-black uppercase italic tracking-wide md:py-4 md:text-4xl ">
+                <div className="mr-2 py-2 text-center font-black uppercase italic tracking-wide text-white md:py-4 md:text-4xl">
                     smiles
                 </div>
                 <img src={smiley.src} alt="logo" className=" mr-1 h-5 md:h-8" />
