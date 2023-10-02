@@ -26,15 +26,15 @@ export default function landing() {
             <section className="lg:divide-y" id="hero">
                 <div className="relative mx-auto">
                     <div className="lg:grid lg:grid-flow-col-dense lg:grid-cols-2">
-                        <div className="brutalborder bg-yellow py-6 text-center sm:px-6 lg:mx-0 lg:max-w-none">
-                            <h1 className="mx-auto my-8 w-3/4 text-5xl font-black">Send crypto with a link</h1>
-                            <p className="m-4 mx-auto w-2/3 p-2 text-2xl">
+                        <div className="brutalborder flex flex-col justify-center gap-6 bg-yellow py-8 text-center sm:px-6 lg:mx-0 lg:max-w-none">
+                            <h1 className="mx-auto my-0 w-3/4 py-0 text-5xl font-black">Send crypto with a link</h1>
+                            <p className="mx-auto my-0 w-2/3 py-0 text-2xl">
                                 Forget about wallet addresses and confirming transactions. Simply send a link.
                             </p>
                             <Link
                                 id="cta-btn"
                                 type="submit"
-                                className="mx-auto mb-2 mt-8 block w-3/5 bg-white p-5 text-2xl font-black no-underline lg:w-1/3  "
+                                className="mx-auto my-0 block w-3/5 bg-white p-5 py-0 text-2xl font-black no-underline lg:w-1/3 "
                                 href={'/send'}
                             >
                                 Send crypto
@@ -206,8 +206,8 @@ export default function landing() {
                             </div>
                         </div>
                         <div className="center-xy brutalborder flex h-full w-full flex-row items-center justify-center gap-2 bg-yellow text-center text-base font-bold text-black">
-                            <div className="mt-4 flex flex-col text-center ">
-                                <ul className="inline-block p-8 text-left lg:px-32 lg:leading-loose">
+                            <div className="mt-4 flex flex-col py-8 text-center ">
+                                <ul className="my-0 inline-block px-8 text-left lg:px-32 lg:leading-loose">
                                     <span className="font-black"> Sending </span>
                                     <li> You deposit your money with the Peanut smart contract.</li>
                                     <li> This smart contract generates a secret link.</li>
