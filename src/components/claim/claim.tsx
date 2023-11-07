@@ -87,11 +87,11 @@ export function Claim({ link }: { link: string }) {
             .find((chain) => chain.chainId == linkDetails.chainId)?.mainnet
 
         try {
-            const crossChainDetails = await peanut.getCrossChainOptionsForLink(
+            const crossChainDetails = await peanut.getCrossChainOptionsForLink({
                 isTestnet,
-                linkDetails.chainId,
-                linkDetails.tokenType
-            )
+                sourceChainId: linkDetails.chainId,
+                tokenType: linkDetails.tokenType,
+            })
             if (crossChainDetails.length > 0 && linkDetails.contractVersion == 'v5') {
                 setCrossChainDetails(crossChainDetails)
                 return true

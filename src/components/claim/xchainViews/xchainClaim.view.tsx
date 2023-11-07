@@ -113,17 +113,22 @@ export function xchainClaimView({
                 .find((chain) => chain.chainId == claimDetails[0].chainId)?.mainnet
 
             const signer = await getWalletClientAndUpdateSigner({ chainId: claimDetails[0].chainId })
-            const x = await peanut.claimLinkXChain(
-                {
+
+            console.log('signer', signer)
+            console.log('claimDetails', claimDetails)
+            console.log(address)
+
+            const x = await peanut.claimLinkCrossChain({
+                structSigner: {
                     signer: signer,
                 },
-                claimDetails[0].link,
-                selectedChain.chainId,
-                selectedToken.address,
+                link: claimDetails[0].link,
+                destinationChainId: selectedChain.chainId.toString(),
+                destinationTokenAddress: selectedToken.address,
                 isTestnet,
-                1,
-                address ?? ''
-            )
+                maxSlippage: 1,
+                recipient: address ?? '',
+            })
             setTxHash([x.txHash])
             setCrossChainSuccess({
                 chainName: selectedChain.chainName,
@@ -153,17 +158,17 @@ export function xchainClaimView({
         const tokenAmount = Math.floor(Number(claimDetails[0].tokenAmount) * Math.pow(10, tokenDecimals)).toString()
 
         try {
-            const x = await peanut.getSquidRoute(
+            const x = await peanut.getSquidRoute({
                 isTestnet,
-                claimDetails[0].chainId.toString(),
-                claimDetails[0].tokenAddress,
-                tokenAmount,
-                selectedChain.chainId.toString(),
-                selectedToken.address,
-                address?.toString() ?? '',
-                address?.toString() ?? '',
-                1
-            )
+                fromChain: claimDetails[0].chainId.toString(),
+                fromToken: claimDetails[0].tokenAddress,
+                fromAmount: tokenAmount,
+                toChain: selectedChain.chainId.toString(),
+                toToken: selectedToken.address,
+                slippage: 1,
+                fromAddress: address ?? '',
+                toAddress: address ?? '',
+            })
             setPossibleRoutesArray([...possibleRoutesArray, { route: x }])
             verbose && console.log(x)
         } catch (error) {
