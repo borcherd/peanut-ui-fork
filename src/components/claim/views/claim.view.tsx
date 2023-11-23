@@ -91,15 +91,29 @@ export function ClaimView({
         try {
             if (claimLink && address) {
                 setLoadingStates('executing transaction')
+                let claimTx
+                if (claimDetails[0].chainId == 1) {
+                    await checkNetwork(claimDetails[0].chainId)
 
-                const claimTx = await peanut.claimLinkGasless({
-                    link: claimLink[0],
-                    recipientAddress: address,
-                    APIKey: process.env.PEANUT_API_KEY ?? '',
-                })
+                    const signer = await getWalletClientAndUpdateSigner({ chainId: claimDetails[0].chainId })
+
+                    claimTx = await peanut.claimLink({
+                        recipient: address,
+                        link: claimLink[0],
+                        structSigner: {
+                            signer,
+                        },
+                    })
+                } else {
+                    claimTx = await peanut.claimLinkGasless({
+                        link: claimLink[0],
+                        recipientAddress: address,
+                        APIKey: process.env.PEANUT_API_KEY ?? '',
+                    })
+                }
+
                 verbose && console.log(claimTx)
                 setTxHash([claimTx.transactionHash ?? claimTx.txHash ?? claimTx.hash ?? claimTx.tx_hash ?? ''])
-
                 onNextScreen()
             }
         } catch (error) {
