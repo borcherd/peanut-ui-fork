@@ -86,7 +86,7 @@ export function Welcome() {
                             </a>
 
                             <a
-                                href="https://peanutprotocol.notion.site/Eco-Beam-Link-Case-Study-0df5cf9b5d544cb48e209cbcbcd63bdb?pvs=4"
+                                href="https://docs.peanut.to/overview/wallet-integrations"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="ml-4 border-none bg-none p-5 text-2xl font-normal text-black no-underline hover:underline"
