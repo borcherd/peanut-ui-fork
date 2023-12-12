@@ -41,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     useEffect(() => {
         setReady(true)
         ReactGA.initialize(process.env.GA_KEY ?? '')
+        console.log('test')
         console.log(art, 'font-size: 20px; background-color: blue; color: yellow;')
         peanut.toggleVerbose(true)
         peanut.greeting()
